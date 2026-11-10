@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Repositório</title>
 <meta name="color-scheme" content="dark light">
-<meta name="description" content="Explorador de arquivos e README deste repositório.">
+<meta name="description" content="Repository File explorer and README.">
 <script>
 /* Aplica o tema antes da pintura para evitar "piscar". Padrão: escuro (azul marinho). */
 try { var t = localStorage.getItem('theme'); document.documentElement.dataset.theme = (t === 'light' || t === 'dark') ? t : 'dark'; }
@@ -229,9 +229,9 @@ button.th:hover{background:var(--accent-bg);color:var(--text)}
   <section class="win" id="explorer" aria-label="Explorador de arquivos">
     <div class="win-title">
       <span class="ico" id="winIco"></span>
-      <span class="name" id="winTitle">Explorador de arquivos</span>
+      <span class="name" id="winTitle">Explorer</span>
       <span class="sp"></span>
-      <a id="winGh" href="#" target="_blank" rel="noopener">Abrir esta pasta no GitHub ↗</a>
+      <a id="winGh" href="#" target="_blank" rel="noopener">Open on GitHub ↗</a>
     </div>
     <div class="toolbar">
       <div class="navbtns">
@@ -266,7 +266,7 @@ button.th:hover{background:var(--accent-bg);color:var(--text)}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg>
       <b id="readmeName">README.md</b>
       <span class="sp"></span>
-      <a id="readmeGh" href="#" target="_blank" rel="noopener" hidden>Ver no GitHub ↗</a>
+      <a id="readmeGh" href="#" target="_blank" rel="noopener" hidden>Go to GitHub ↗</a>
     </div>
     <div class="md" id="readme"><div class="skel-rows"><div class="skel" style="width:38%;height:22px"></div><div class="skel" style="width:92%"></div><div class="skel" style="width:84%"></div><div class="skel" style="width:90%"></div><div class="skel" style="width:60%"></div></div></div>
   </section>
@@ -612,7 +612,7 @@ function renderNav() {
   $('#bView').title = state.view === 'icons' ? 'Exibir em detalhes' : 'Exibir em ícones';
   const here = state.nodes.get(state.cwd);
   $('#winGh').href = blobUrl(here);
-  $('#winTitle').textContent = `${state.cwd ? state.cwd : ctx.repo} — Explorador de arquivos`;
+  $('#winTitle').textContent = `${state.cwd ? state.cwd : ctx.repo} — Explorer`;
 }
 
 function render() { renderAddr(); renderSide(); renderRows(); renderNav(); renderStatus(); }
@@ -844,8 +844,8 @@ async function main() {
     const files = t.all.filter(n => n.type !== 'dir').length, dirs = t.all.length - files;
     const chips = $('#chips'); chips.textContent = '';
     const chip = (label, value) => { const c = el('span', 'chip'); const b = el('b', null, value); c.append(label ? document.createTextNode(label + ' ') : '', b); chips.append(c); };
-    chip('', `${files} arquivos`); chip('', `${dirs} pastas`); chip('branch', data.branch);
-    if (data.info.pushed_at) chip('atualizado', rel(data.info.pushed_at));
+    chip('', `${files} files`); chip('', `${dirs} folders`); chip('branch', data.branch);
+    if (data.info.pushed_at) chip('updated', rel(data.info.pushed_at));
     if (data.info.stars) chip('★', String(data.info.stars));
     if (data.info.description) { const d = $('#desc'); d.textContent = data.info.description; d.hidden = false; }
     $('#state').textContent = '';
