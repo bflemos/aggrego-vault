@@ -12,6 +12,7 @@ Here you will find tutorials and practical guides on various topics, including i
 
 ### 📚 Structure
 * `/guides` - Step-by-step tutorials and practical guides.
+* `/games` - There might be some test games
 
 ### ⚖️ License
 All content in this repository is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/). 
@@ -27,6 +28,7 @@ Aqui você encontrará tutoriais e guias práticos sobre diversos tópicos, incl
 
 ### 📚 Estrutura
 * `/guides` - Tutoriais passo a passo e guias práticos.
+* `/games` - Pode ser que tenha alguns jogos que criei para testar
 
 ### ⚖️ Licença
 Todo o conteúdo deste repositório está licenciado sob a licença [Creative Commons Atribuição-NãoComercial 4.0 Internacional (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/deed.pt-br). 
